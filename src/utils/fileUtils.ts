@@ -67,7 +67,7 @@ export const downloadProcessedFiles = async (files: ProcessedFile[]): Promise<vo
   try {
     const content = await zip.generateAsync({ type: 'blob' });
     saveAs(content, 'processed_documents.zip');
-  } catch (error) {
+  } catch {
     throw new Error('Failed to generate ZIP file');
   }
 };

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useAppStore } from '@stores/appStore';
 import { downloadProcessedFiles, downloadSingleFile } from '@utils/fileUtils';
-import { Download, FileText } from 'lucide-react';
 
 const DownloadManager: React.FC = () => {
   const { processedFiles } = useAppStore();

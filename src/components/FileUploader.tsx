@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { useAppStore } from '@stores/appStore';
 import { processMultipleFiles, downloadProcessedFiles, downloadSingleFile } from '@utils/fileUtils';
-import { Upload, File, X, FileText, Clock } from 'lucide-react';
+import { File, X, FileText, Clock } from 'lucide-react';
 
 const FileUploader: React.FC = () => {
-  const { files, rules, processedFiles, setFiles, setProcessedFiles, clearProcessedFiles } = useAppStore();
+  const { files, rules, setFiles, setProcessedFiles, clearProcessedFiles } = useAppStore();
   const [isProcessing, setIsProcessing] = useState(false);
   const [dragActive, setDragActive] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
