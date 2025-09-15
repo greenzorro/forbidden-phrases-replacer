@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply min-h-screen bg-[#f5f5fa] text-gray-900 dark:bg-[#0a0a0f] dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-200 hover:border-gray-300 focus:border-primary dark:border-gray-700 dark:hover:border-gray-500 dark:focus:border-primary rounded-lg bg-white dark:bg-[#242430] text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200;
+  }
+
+  .textarea-field {
+    @apply w-full px-3 py-2 border border-gray-200 hover:border-gray-300 focus:border-primary dark:border-gray-700 dark:hover:border-gray-500 dark:focus:border-primary rounded-lg bg-white dark:bg-[#242430] text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-primary resize-none transition-all duration-200;
+  }
+}
