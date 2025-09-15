@@ -47,7 +47,7 @@ function App() {
 
             {/* Footer */}
             <div className="flex-shrink-0 text-center text-xs text-gray-500 dark:text-gray-400 py-2">
-              <p>Created by <a href="https://victor42.eth.limo/page/tools/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 dark:text-primary dark:hover:text-primary/80">Victor_42</a> | <a href="https://github.com/greenzorro/forbidden-phrases-replacer" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 dark:text-primary dark:hover:text-primary/80">Code</a></p>
+              <p>Created by <a href="https://victor42.work/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 dark:text-primary dark:hover:text-primary/80">Victor_42</a> | <a href="https://github.com/greenzorro/forbidden-phrases-replacer" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 dark:text-primary dark:hover:text-primary/80">Code</a></p>
             </div>
           </div>
         </div>
