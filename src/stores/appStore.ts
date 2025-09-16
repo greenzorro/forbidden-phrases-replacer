@@ -40,6 +40,45 @@ interface AppStore {
   setTheme: (theme: 'light' | 'dark') => void;
 }
 
+// 主题初始化函数
+const initializeTheme = () => {
+  // 从localStorage读取存储的主题设置
+  const storedData = localStorage.getItem('forbidden-phrases-storage');
+  if (storedData) {
+    try {
+      const parsed = JSON.parse(storedData);
+      const storedTheme = parsed.state?.theme;
+      if (storedTheme) {
+        // 应用存储的主题
+        if (storedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        return storedTheme;
+      }
+    } catch (error) {
+      console.error('Failed to parse stored theme:', error);
+    }
+  }
+  
+  // 如果没有存储的主题，检查系统偏好
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const systemTheme = prefersDark ? 'dark' : 'light';
+  
+  // 应用系统主题
+  if (systemTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+  
+  return systemTheme;
+};
+
+// 初始化主题（在应用加载时执行一次）
+const initialTheme = initializeTheme();
+
 export const useAppStore = create<AppStore>()(
   persist(
     (set) => ({
@@ -55,7 +94,7 @@ export const useAppStore = create<AppStore>()(
       processedFiles: [],
       originalText: '',
       processedText: '',
-      theme: 'light',
+      theme: initialTheme,
 
       // Actions
       addRule: (rule) => {
@@ -141,7 +180,7 @@ export const useAppStore = create<AppStore>()(
       toggleTheme: () => {
         set((state) => {
           const newTheme = state.theme === 'light' ? 'dark' : 'light';
-          // Apply theme to document
+          // Apply theme to document immediately
           if (newTheme === 'dark') {
             document.documentElement.classList.add('dark');
           } else {
@@ -153,7 +192,7 @@ export const useAppStore = create<AppStore>()(
 
       setTheme: (theme) => {
         set(() => {
-          // Apply theme to document
+          // Apply theme to document immediately
           if (theme === 'dark') {
             document.documentElement.classList.add('dark');
           } else {

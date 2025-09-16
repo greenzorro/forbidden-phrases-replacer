@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://forbidden-phrases-replacer.pages.dev",
+  "homepage": "https://phrase-replacer.victor42.work",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

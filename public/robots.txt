@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://forbidden-phrases-replacer.pages.dev/sitemap.xml
+Sitemap: https://phrase-replacer.victor42.work/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1

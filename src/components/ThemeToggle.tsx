@@ -6,13 +6,48 @@ const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useAppStore();
 
   useEffect(() => {
-    // Initialize theme on component mount
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme]);
+    // Initialize theme on component mount - 确保主题正确应用
+    const applyTheme = (currentTheme: 'light' | 'dark') => {
+      if (currentTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+
+    // 立即应用当前主题
+    applyTheme(theme);
+    
+    // 监听系统主题变化（可选功能）
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      // 只有当用户没有手动设置主题时才跟随系统
+      const storedTheme = localStorage.getItem('forbidden-phrases-storage');
+      if (storedTheme) {
+        try {
+          const parsed = JSON.parse(storedTheme);
+          if (parsed.state?.theme) {
+            // 用户已设置主题，不跟随系统
+            return;
+          }
+        } catch (error) {
+          console.error('Failed to parse stored theme:', error);
+        }
+      }
+      
+      // 如果没有存储的主题设置，跟随系统
+      const systemTheme = e.matches ? 'dark' : 'light';
+      if (systemTheme !== theme) {
+        toggleTheme();
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange);
+    
+    return () => {
+      mediaQuery.removeEventListener('change', handleSystemThemeChange);
+    };
+  }, [theme, toggleTheme]);
 
   const handleToggle = () => {
     toggleTheme();

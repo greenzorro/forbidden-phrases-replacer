@@ -1,0 +1,23 @@
+{
+  "name": "违禁词违规词敏感词替换工具",
+  "short_name": "违禁词替换",
+  "description": "专业违禁词违规词敏感词替换工具，支持抖音、快手、小红书、视频号等内容安全处理",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#DF2F2F",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "lang": "zh-CN"
+}

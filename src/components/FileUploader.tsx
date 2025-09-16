@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useAppStore } from '@stores/appStore';
 import { processMultipleFiles, downloadProcessedFiles, downloadSingleFile } from '@utils/fileUtils';
-import { File, X, FileText, Clock } from 'lucide-react';
+import { File, X, Clock } from 'lucide-react';
 
 const FileUploader: React.FC = () => {
   const { files, rules, setFiles, setProcessedFiles, clearProcessedFiles } = useAppStore();
@@ -120,7 +120,7 @@ const FileUploader: React.FC = () => {
               </div>
 
               {/* 按钮区域 */}
-              <div className="flex flex-col gap-2 w-full lg:w-32 sm:w-40 flex-shrink-0">
+              <div className="flex flex-col gap-2 w-full lg:w-48 sm:w-56 flex-shrink-0">
                 <button
                   onClick={processAndDownloadFiles}
                   disabled={isProcessing || rules.length === 0}
@@ -133,7 +133,6 @@ const FileUploader: React.FC = () => {
                     </>
                   ) : (
                     <>
-                      <FileText size={16} />
                       替换 {files.length} 个文件
                     </>
                   )}
