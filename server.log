@@ -16,3 +16,9 @@ You are using Node.js 22.9.0. Vite requires Node.js version 20.19+ or 22.12+. Pl
 2:06:16 PM [vite] (client) hmr update /src/index.css, /src/components/RuleEditor.tsx, /src/components/TextProcessor.tsx
 2:06:30 PM [vite] (client) hmr update /src/index.css, /src/components/RuleEditor.tsx, /src/components/TextProcessor.tsx
 2:59:12 PM [vite] (client) page reload index.html
+8:56:35 AM [vite] changed tsconfig file detected: /Users/colachan/Resilio/workspace/coding/projects/forbidden-phrases-replacer/tsconfig.node.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+8:56:36 AM [vite] (client) page reload index.html
+8:56:47 AM [vite] (client) hmr update /src/index.css
+8:56:48 AM [vite] changed tsconfig file detected: /Users/colachan/Resilio/workspace/coding/projects/forbidden-phrases-replacer/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+8:56:50 AM [vite] vite.config.ts changed, restarting server...
+8:56:50 AM [vite] server restarted.
