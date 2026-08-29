@@ -91,7 +91,7 @@ forbidden-phrases-replacer/
 ├── test/                       # 测试目录
 ├── .gitignore                  # Git忽略文件
 ├── eslint.config.js            # ESLint配置
-├── index.html                  # HTML入口文件
+├── index.html                  # HTML入口文件；#root 内含静态SEO内容块（React 挂载后替换为应用界面）
 ├── notes.md                    # 项目备忘录（本文档）
 ├── package.json                # 项目配置和依赖
 ├── package-lock.json           # 依赖版本锁定
@@ -146,7 +146,7 @@ npm run preview
 - **Favicon**: 多尺寸PNG图标（16x16, 32x32, 180x180, 192x192, 512x512）
 - **导航栏图标**: 使用app-icon.png作为应用标识
 - **PWA支持**: Web应用清单文件，支持添加到主屏幕
-- **SEO优化**: 完整的meta标签和结构化数据
+- **SEO优化**: 完整的meta标签和结构化数据；`index.html` 的 `#root` 内置静态内容块（h1 + 简介 + 功能列表），供搜索引擎与无 JS 环境抓取，React 挂载后替换为应用界面；`Logo` 组件的品牌名是页面唯一 h1。修改首页文案或功能描述时，需同步更新 meta description、JSON-LD 与 `#root` 静态块
 
 ### 4.3 Cloudflare Pages部署
 **问题记录**：初次部署失败，原因分析如下：
@@ -303,7 +303,7 @@ npm run preview
 ### 11.2 主要访问地址
 - **主访问地址**: https://phrase-replacer.victor42.work/
 - **应用图标**: 已统一更新为红色主题（#DF2F2F）
-- **SEO优化**: 完整的meta标签和结构化数据
+- **SEO优化**: 完整的meta标签和结构化数据；`index.html` 的 `#root` 内置静态内容块（h1 + 简介 + 功能列表），供搜索引擎与无 JS 环境抓取，React 挂载后替换为应用界面；`Logo` 组件的品牌名是页面唯一 h1。修改首页文案或功能描述时，需同步更新 meta description、JSON-LD 与 `#root` 静态块
 
 ### 11.3 验证系统简化
 基于纯前端应用特点，验证系统已简化为：

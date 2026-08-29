@@ -88,7 +88,21 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- 静态内容块：供搜索引擎与无 JS 环境抓取；React 挂载后会替换为完整工具界面 -->
+    <div id="root">
+      <div style="max-width: 680px; margin: 48px auto; padding: 0 20px; font-family: system-ui, -apple-system, sans-serif; color: #374151; line-height: 1.8;">
+        <h1 style="font-size: 24px; font-weight: 700; margin: 0 0 16px; color: #111827;">违禁词违规词敏感词替换工具</h1>
+        <p>面向抖音、快手、小红书、视频号等社交媒体平台的内容安全自查工具：检测文案中的违禁词与敏感词，按可自定义的规则完成替换，实时展示处理结果，帮助创作者在发布前排查内容合规风险。</p>
+        <h2 style="font-size: 17px; font-weight: 600; margin: 24px 0 8px; color: #111827;">功能特性</h2>
+        <ul style="margin: 0; padding-left: 20px;">
+          <li>违禁词、违规词、敏感词检测与替换，实时显示替换结果与数量</li>
+          <li>支持单条文本处理与多文件批量替换</li>
+          <li>替换规则可自定义编辑，支持规则导入导出</li>
+          <li>纯浏览器本地运行，文案不上传服务器</li>
+        </ul>
+        <p style="color: #9ca3af; font-size: 14px; margin-top: 24px;">正在加载完整工具界面…</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

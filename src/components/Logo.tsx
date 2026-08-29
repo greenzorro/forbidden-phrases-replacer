@@ -10,9 +10,9 @@ const Logo: React.FC = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <span className="text-xl font-bold text-gray-900 dark:text-white">
+      <h1 className="text-xl font-bold text-gray-900 dark:text-white">
         违禁词替换工具
-      </span>
+      </h1>
     </div>
   );
 };
